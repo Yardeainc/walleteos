@@ -1,0 +1,27 @@
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 0rem;
+  position: relative;
+  width: 320px;
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.menubar {
+	  background: #004e8e;
+}
+
+.ui-menubar,.ui-menu-child,.ui-menu {
+    background-color: #004e8e;
+}
+
+

@@ -1,0 +1,11 @@
+<p-toolbar [style]="{'background':'DodgerBlue','height':'40px', 'text-align':'center'}">
+    <div class="ui-toolbar-group-left">
+         <button pButton type="button" (click)="onHome()" label="EOS" icon="fa-bars"></button>
+    </div>
+    
+    <div class="ui-toolbar-group-right">
+        <button pButton type="button" (click)="onDataset()" label="Data" icon="fa-th-large"></button>
+        <button pButton type="button" (click)="onHistory()" label="Chart" icon="fa-history"></button>
+   </div>
+</p-toolbar>
+<router-outlet></router-outlet>

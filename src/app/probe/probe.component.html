@@ -1,0 +1,20 @@
+<div class="content-section implementation" [ngClass]="className">
+    <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none;text-align:right;">
+        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+        <input #gb type="text" pInputText size="30" placeholder="Global Filter">
+    </div>
+
+    <p-dataTable [value]="historyList"  selectionMode="single" [(selection)]="selectedHistory" (onRowSelect)="onRowSelect($event)" [rows]="15" [paginator]="true" [responsive]="true" [globalFilter]="gb" #dt>
+        <p-header>Errors ({{total}}) </p-header>
+        <p-column field="dataSet"  [style]="{'word-wrap':'break-word','width':'10%'}" header="DataSet Name" [sortable]="true"></p-column>
+        <p-column field="application" [style]="{'word-wrap':'break-word','width':'10%'}" header="Application Name" [sortable]="true"></p-column>
+        <p-column field="interval" [style]="{'width':'5%'}" header="Interval" [sortable]="true"></p-column>
+        <p-column field="message" [style]="{'word-wrap':'break-word','width':'55%'}" [filter]="true" filterPlaceholder="Search" header="Message" [sortable]="true"></p-column>
+        <p-column field="__ModifiedOn" [style]="{'word-wrap':'break-word','width':'10%'}" header="Updated Time" [sortable]="true">
+            <ng-template let-col let-data="rowData" pTemplate>
+                <span>{{data.__ModifiedOn | date: 'medium'}}</span>
+            </ng-template>
+        </p-column>
+        <p-column field="host" [style]="{'word-wrap':'break-word','width':'10%'}" header="Host" [sortable]="true"></p-column>
+    </p-dataTable>
+</div>

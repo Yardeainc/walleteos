@@ -1,0 +1,29 @@
+
+<div class="content-section implementation">
+    <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none;text-align:right;">
+        <p-calendar [(ngModel)]="value" showTime="showTime" hourFormat="12"></p-calendar>
+        <input id="input" type="text" size="30" pInputText [(ngModel)]="text"> 
+        <button pButton type="button" (click)="onclick()" label="Refresh"></button>
+    </div>
+
+
+    <p-dataTable [value]="datasets" class="wrapword" selectionMode="single" [(selection)]="selectedDataset" (onRowSelect)="onRowSelect($event)" [rows]="15" [paginator]="true" [responsive]="true" #dt>
+        <p-header>Transaction({{total}}) </p-header>
+        <p-column field="blockNumber"  [style]="{'word-wrap':'break-word','width':'15%'}" header="Block Number" [sortable]="true"></p-column>
+        <p-column field="timeString" [style]="{'word-wrap':'break-word','width':'15%'}" header="Time Stamp" [sortable]="true"></p-column>
+        <p-column field="value" [style]="{'width':'8%'}"  header="Value" [sortable]="true">
+     
+        </p-column>
+        <p-column field="gas" [style]="{'width':'8%'}" header="Gas" [sortable]="true"></p-column>
+        <p-column field="gasPrice" [style]="{'width':'8%'}"  header="Gas Price" [sortable]="true">
+        </p-column>
+        <p-column field="cumulativeGasUsed" [style]="{'width':'15%'}" header="cumulativeGasUsed" [sortable]="true">
+        </p-column>
+        <p-column field="gasUsed" [style]="{'width':'15%'}" header="gasUsed" [sortable]="true">
+        </p-column>
+        <p-column field="confirmations" [style]="{'width':'15%'}" header="confirmations" [sortable]="true">
+        </p-column>
+
+    </p-dataTable>
+
+</div>

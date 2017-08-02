@@ -1,0 +1,22 @@
+<div [style]="{'padding':'4px 10px'}" >
+<p-breadcrumb [model]="items"></p-breadcrumb>
+<p-tabView [style]="{'padding':'4px 10px'}" (onChange)="handleChange($event)">
+    <p-tabPanel header="Configuration" leftIcon="fa-cog">
+         <div *ngIf="jsondata" [@expandSection]="true"
+               ace-editor
+              [text]="jsondata"
+              [options]="aceEditorOptions"
+              [readOnly]="true"
+              [mode]="json"
+              [autoUpdateContent]="true"
+              [style.min-height]="'200px'"
+                 style="width:100%; border: 0;">
+          </div>
+    </p-tabPanel>
+    <p-tabPanel header="Execution History" leftIcon="fa-history">
+        <div *ngIf="datasetName">
+             <app-history-list className="{{datasetName}}"></app-history-list>
+        </div> 
+    </p-tabPanel>
+</p-tabView>
+</div>
